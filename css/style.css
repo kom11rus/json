@@ -257,3 +257,18 @@ pre {
 .p-modal__content p {
     margin: 10px 0;
 }
+.p-navigation__nav {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .p-navigation__nav {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    
+    .p-navigation__nav.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
