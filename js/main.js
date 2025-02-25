@@ -8,28 +8,35 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Открытие и закрытие меню
+// ИСПРАВЛЕНИЕ: Обновленный код управления меню
 document.addEventListener('DOMContentLoaded', function () {
     const openMenuButton = document.querySelector('.p-navigation__toggle--open');
     const closeMenuButton = document.querySelector('.p-navigation__toggle--close');
     const navigationMenu = document.querySelector('.p-navigation__nav');
 
-    // Проверяем, что элементы найдены
-    if (!openMenuButton || !closeMenuButton || !navigationMenu) {
-        console.error('Один из элементов не найден!');
-        return;
+    function toggleMenu() {
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+        if (!isMobile) return; // Работаем только на мобильных
+        
+        navigationMenu.classList.toggle('is-visible');
+        document.body.classList.toggle('no-scroll');
+        openMenuButton.style.display = navigationMenu.classList.contains('is-visible') ? 'none' : 'block';
+        closeMenuButton.style.display = navigationMenu.classList.contains('is-visible') ? 'block' : 'none';
     }
 
-    // Открыть меню
-    openMenuButton.addEventListener('click', function (e) {
-        e.preventDefault(); // Предотвращаем стандартное поведение ссылки
-        navigationMenu.classList.add('is-visible'); // Добавляем класс для отображения меню
-    });
+    // ИСПРАВЛЕНИЕ: Добавляем проверку на существование элементов
+    if (openMenuButton && closeMenuButton && navigationMenu) {
+        openMenuButton.addEventListener('click', toggleMenu);
+        closeMenuButton.addEventListener('click', toggleMenu);
+    }
 
-    // Закрыть меню
-    closeMenuButton.addEventListener('click', function (e) {
-        e.preventDefault(); // Предотвращаем стандартное поведение ссылки
-        navigationMenu.classList.remove('is-visible'); // Убираем класс для скрытия меню
+    // ИСПРАВЛЕНИЕ: Автоматически закрываем меню при изменении размера окна
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768) {
+            navigationMenu.classList.remove('is-visible');
+            openMenuButton.style.display = 'block';
+            closeMenuButton.style.display = 'none';
+        }
     });
 });
 
