@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vanilla-framework/vanilla-framework@4.0.0/dist/vanilla.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Полное руководство по работе с JSON в Ruby">
+    <title>Ruby и JSON | JSON Guide</title>
+    <link rel="stylesheet" href="../css/style.css"> <!-- Исправленный путь -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Главное меню -->
+    <header class="p-navigation">
+        <div class="p-navigation__row">
+            <div class="p-navigation__banner">
+                <div class="p-navigation__logo">
+                    <img src="../img/logo.svg" alt="JSON Guide" width="100" class="logo"> <!-- Исправленный путь -->
+                    <span class="p-navigation__site-name">JSON Guide</span>
+                </div>
+                <a href="#navigation" class="p-navigation__toggle--open" title="Открыть меню">Меню</a>
+                <a href="#navigation-closed" class="p-navigation__toggle--close" title="Закрыть меню">Закрыть</a>
+            </div>
+            <nav class="p-navigation__nav">
+                <ul class="p-navigation__items">
+                    <li class="p-navigation__item"><a href="../index.html">Главная</a></li> <!-- Исправленный путь -->
+                    <li class="p-navigation__item"><a href="python.html">Python</a></li>
+                    <li class="p-navigation__item"><a href="javascript.html">JavaScript</a></li>
+                    <li class="p-navigation__item"><a href="java.html">Java</a></li>
+                    <li class="p-navigation__item"><a href="csharp.html">C#</a></li>
+                    <li class="p-navigation__item"><a href="php.html">PHP</a></li>
+                    <li class="p-navigation__item is-selected"><a href="ruby.html">Ruby</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <div class="row">
+        <main class="col-9">
+            <div class="p-card">
+                <!-- Кнопка "На главную" -->
+                <a href="../index.html" class="p-button--neutral u-margin-bottom">На главную</a> <!-- Исправленный путь -->
+
+                <h1>Ruby и JSON</h1>
+
+                <!-- Раздел "Стандартная библиотека" -->
+                <section id="standard">
+                    <h2>Стандартная библиотека</h2>
+                    <pre><code class="language-ruby">
+require 'json'
+
+hash = { name: 'Alice', age: 25 }
+json = hash.to_json
+parsed = JSON.parse(json)
+                    </code></pre>
+                </section>
+
+                <!-- Раздел "Оптимизация с Oj" -->
+                <section id="oj">
+                    <h2>Оптимизация с Oj</h2>
+                    <pre><code class="language-ruby">
+require 'oj'
+
+Oj.default_options = { mode: :compat }
+json = Oj.dump(data)
+parsed = Oj.load(json)
+                    </code></pre>
+                </section>
+
+                <!-- Таблица сравнения -->
+                <div class="p-table--mobile-card">
+                    <table class="p-table">
+                        <thead>
+                            <tr>
+                                <th>Гем</th>
+                                <th>Преимущества</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>oj</td>
+                                <td>~10x быстрее</td>
+                            </tr>
+                            <tr>
+                                <td>standart</td>
+                                <td>Базовая</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="p-footer">
+        <div class="row">
+            <div class="col-6">
+                <p>&copy; 2025 JSON Guide. Все права защищены.</p>
+                <ul class="p-inline-list">
+                    <li class="p-inline-list__item"><a href="#">Политика конфиденциальности</a></li>
+                    <li class="p-inline-list__item"><a href="#">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="col-6 u-align--right">
+                <div class="p-logo">
+                    <img src="../img/logo-footer.svg" alt="Логотип" width="80"> <!-- Исправленный путь -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Подключение локального JavaScript-файла -->
+    <script src="../js/main.js"></script> <!-- Исправленный путь -->
+</body>
+</html>

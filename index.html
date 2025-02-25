@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/vanilla-framework/vanilla-framework@4.0.0/dist/vanilla.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Полное руководство по работе с JSON в различных языках программирования">
+    <title>Главная | JSON Guide</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Главное меню -->
+    <header class="p-navigation">
+        <div class="p-navigation__row">
+            <div class="p-navigation__banner">
+                <div class="p-navigation__logo">
+                    <img src="img/logo.svg" alt="JSON Guide" width="100" class="logo">
+                    <span class="p-navigation__site-name">JSON Guide</span>
+                </div>
+                <a href="#navigation" class="p-navigation__toggle--open" title="Открыть меню">Меню</a>
+                <a href="#navigation-closed" class="p-navigation__toggle--close" title="Закрыть меню">Закрыть</a>
+            </div>
+            <nav class="p-navigation__nav">
+                <ul class="p-navigation__items">
+                    <li class="p-navigation__item is-selected"><a href="index.html">Главная</a></li>
+                    <li class="p-navigation__item"><a href="pages/python.html">Python</a></li>
+                    <li class="p-navigation__item"><a href="pages/javascript.html">JavaScript</a></li>
+                    <li class="p-navigation__item"><a href="pages/java.html">Java</a></li>
+                    <li class="p-navigation__item"><a href="pages/csharp.html">C#</a></li>
+                    <li class="p-navigation__item"><a href="pages/php.html">PHP</a></li>
+                    <li class="p-navigation__item"><a href="pages/ruby.html">Ruby</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <div class="row">
+        <main class="col-12">
+            <div class="p-card">
+                <!-- Раздел "Что такое JSON?" -->
+                <section id="what-is-json">
+                    <h1 class="p-heading--2">JSON - современный формат обмена данными</h1>
+                    <div class="p-media-object">
+                        <img src="img/json-icon.webp" alt="JSON Icon" class="p-media-object__image">
+                        <div class="p-media-object__details">
+                            <p>JSON (JavaScript Object Notation) - это легкий формат для хранения и передачи данных. Широко используется в веб-приложениях и API.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Раздел "Преимущества" -->
+                <section id="advantages" class="u-margin-top">
+                    <h2 class="p-heading--3">Основные преимущества</h2>
+                    <div class="p-table--mobile-card">
+                        <table class="p-table">
+                            <thead>
+                                <tr>
+                                    <th>Характеристика</th>
+                                    <th>Описание</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Читаемость</td>
+                                    <td>Простой для чтения и написания</td>
+                                </tr>
+                                <tr>
+                                    <td>Совместимость</td>
+                                    <td>Поддержка всеми языками</td>
+                                </tr>
+                                <tr>
+                                    <td>Производительность</td>
+                                    <td>Быстрая обработка</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- Раздел "Структура JSON" -->
+                <section id="structure" class="u-margin-top">
+                    <h2 class="p-heading--3">Базовая структура</h2>
+                    <pre><code class="language-json">
+{
+    "имя": "Адам",
+    "возраст": 3879,
+    "адрес": {
+        "город": "Райский",
+        "улица": "Сад"
+    },
+    "теги": ["json", "data", "api"]
+}
+                    </code></pre>
+                </section>
+
+                <!-- Раздел "Видео-обзор" -->
+                <section id="examples" class="u-margin-top">
+                    <h2 class="p-heading--3">Видео-обзор</h2>
+                    <div class="u-embedded-media">
+                        <iframe class="u-embedded-media__element"
+                                src="https://rutube.ru/play/embed/d901ea6af46c2aed55d18732e8309bc8/"
+                                frameborder="0"
+                                allow="clipboard-write; autoplay"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="p-footer">
+        <div class="row">
+            <div class="col-6">
+                <p>&copy; 2025 JSON Guide. Все права защищены.</p>
+                <ul class="p-inline-list">
+                    <li class="p-inline-list__item"><a href="#">Политика конфиденциальности</a></li>
+                    <li class="p-inline-list__item"><a href="#contacts">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="col-6 u-align--right">
+                <div class="p-logo">
+                    <img src="img/logo-footer.svg" alt="Логотип" width="80">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для контактов -->
+    <div id="contacts-modal" class="p-modal">
+        <div class="p-modal__dialog">
+            <header class="p-modal__header">
+                <h2 class="p-modal__title">Контакты</h2>
+                <button class="p-modal__close" aria-label="Close modal" onclick="closeContactsModal()">×</button>
+            </header>
+            <div class="p-modal__content">
+                <p><strong>Email:</strong> support@jsonguide.com</p>
+                <p><strong>Телефон:</strong> +7 (123) 456-78-90</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Подключение локального JavaScript-файла -->
+    <script src="js/main.js"></script>
+</body>
+</html>

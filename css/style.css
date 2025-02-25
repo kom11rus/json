@@ -1,0 +1,251 @@
+/* Кастомные стили */
+body {
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 1.6;
+    background-color: #333333; /* Темно-серый фон */
+    color: #ffffff; /* Белый текст */
+    margin: 0;
+    padding: 0;
+}
+
+/* Логотип */
+.logo {
+    vertical-align: middle;
+    margin-right: 0.8rem;
+}
+
+/* Отступы */
+.u-margin-top {
+    margin-top: 2rem;
+}
+
+.u-margin-bottom {
+    margin-bottom: 1rem;
+}
+
+/* Шапка */
+.p-navigation {
+    position: relative; /* Делаем контейнер шапки относительным */
+    background-color: #1e90ff; /* Голубой цвет для шапки */
+    color: #ffffff; /* Белый текст */
+    padding: 1rem 0; /* Отступы сверху и снизу */
+}
+
+.p-navigation__item a {
+    color: #ffffff; /* Белый цвет для ссылок в меню */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.p-navigation__item a:hover {
+    color: #ffd700; /* Золотой цвет при наведении на ссылку */
+}
+
+/* Карточки */
+.p-card {
+    background-color: #444444; /* Темный фон для карточек */
+    color: #ffffff; /* Белый текст */
+    border-radius: 8px; /* Закругленные углы */
+    padding: 1.5rem; /* Увеличенные отступы внутри карточки */
+    margin-bottom: 1.5rem; /* Увеличенный отступ снизу */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень для карточки */
+}
+
+/* Таблицы */
+.p-table {
+    background-color: #444444; /* Темный фон для таблиц */
+    color: #ffffff; /* Белый текст */
+    width: 100%; /* Ширина таблицы */
+    border-collapse: separate; /* Раздельные границы ячеек */
+    border-spacing: 20px 10px; /* Расстояние между ячейками (горизонтальное и вертикальное) */
+    margin-bottom: 1.5rem; /* Отступ снизу */
+}
+
+.p-table th,
+.p-table td {
+    border-color: #555555; /* Цвет границ таблицы */
+    padding: 15px; /* Отступы внутри ячеек */
+    text-align: left; /* Выравнивание текста по левому краю */
+}
+
+.p-table th {
+    font-weight: bold; /* Жирный шрифт для заголовков */
+    background-color: #1e90ff; /* Голубой фон для заголовков */
+    color: #ffffff; /* Белый текст */
+}
+
+.p-table td {
+    vertical-align: top; /* Выравнивание текста по верхнему краю */
+    background-color: #555555; /* Темный фон для ячеек */
+}
+
+/* Блоки с кодом */
+pre {
+    background: #222222; /* Темный фон для блоков с кодом */
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    color: #ffffff; /* Белый текст */
+    margin-bottom: 1.5rem; /* Отступ снизу */
+}
+
+/* Подсветка синтаксиса */
+.language-python { color: #3572A5; } /* Синий для Python */
+.language-javascript { color: #f1e05a; } /* Желтый для JavaScript */
+.language-csharp { color: #178600; } /* Зеленый для C# */
+.language-java { color: #b07219; } /* Коричневый для Java */
+.language-php { color: #4F5D95; } /* Синий для PHP */
+.language-ruby { color: #701516; } /* Красный для Ruby */
+
+/* Футер */
+.p-footer {
+    background-color: #1e90ff; /* Голубой цвет для футера */
+    color: #ffffff; /* Белый текст */
+    padding: 1.5rem 0; /* Отступы внутри футера */
+    text-align: center; /* Выравнивание текста по центру */
+}
+
+.p-footer a {
+    color: #ffffff; /* Белый цвет для ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.p-footer a:hover {
+    color: #ffd700; /* Золотой цвет при наведении на ссылку */
+}
+
+/* Стили для меню */
+.p-navigation__nav {
+    display: none; /* Меню скрыто по умолчанию */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 100%; /* Позиционируем меню под шапкой */
+    left: 0;
+    width: 100%;
+    background-color: #1e90ff; /* Голубой фон меню */
+    z-index: 1000; /* Убедимся, что меню поверх других элементов */
+}
+
+.p-navigation__nav.is-visible {
+    display: block; /* Меню отображается при добавлении класса is-visible */
+}
+
+/* Стили для кнопок меню */
+.p-navigation__toggle--open,
+.p-navigation__toggle--close {
+    display: none; /* Скрываем кнопки по умолчанию */
+}
+
+/* Адаптивность: показываем кнопки на мобильных устройствах */
+@media (max-width: 768px) {
+    .p-navigation__toggle--open,
+    .p-navigation__toggle--close {
+        display: inline-block; /* Показываем кнопки на мобильных устройствах */
+    }
+
+    .p-navigation__items {
+        flex-direction: column; /* Меню в столбик на мобильных устройствах */
+    }
+
+    .p-navigation__item {
+        margin: 0;
+    }
+
+    .p-navigation__item a {
+        display: block;
+        padding: 1rem;
+        color: #ffffff; /* Белый цвет текста */
+    }
+
+    .p-navigation__item a:hover {
+        background-color: #0077cc; /* Темно-голубой цвет при наведении */
+    }
+}
+
+/* Стили для кнопки "На главную" */
+.p-button--neutral {
+    background-color: #1e90ff; /* Голубой цвет */
+    color: #ffffff; /* Белый текст */
+    border: none;
+    padding: 0.75rem 1.5rem; /* Увеличенные отступы */
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 1.5rem; /* Отступ снизу */
+    transition: background-color 0.3s ease; /* Плавное изменение цвета */
+}
+
+.p-button--neutral:hover {
+    background-color: #0077cc; /* Темно-голубой цвет при наведении */
+}
+
+/* Адаптивные стили для видео */
+.u-embedded-media {
+    position: relative;
+    padding-bottom: 56.25%; /* Соотношение сторон 16:9 */
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 1.5rem; /* Отступ снизу */
+}
+
+.u-embedded-media__element {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Стили для модального окна */
+.p-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.p-modal__dialog {
+    background: #444444; /* Темный фон, как у карточек */
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.p-modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.p-modal__title {
+    margin: 0;
+    color: #ffffff; /* Белый текст */
+}
+
+.p-modal__close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ffffff; /* Белый цвет для кнопки закрытия */
+}
+
+.p-modal__close:hover {
+    color: #ffd700; /* Золотой цвет при наведении */
+}
+
+.p-modal__content {
+    color: #ffffff; /* Белый текст */
+}
+
+.p-modal__content p {
+    margin: 10px 0;
+}
