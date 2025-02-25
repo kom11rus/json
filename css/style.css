@@ -115,13 +115,13 @@ pre {
 
 /* Стили для меню */
 .p-navigation__nav {
-    display: none; /* Меню скрыто по умолчанию */
     position: absolute; /* Абсолютное позиционирование */
     top: 100%; /* Позиционируем меню под шапкой */
     left: 0;
     width: 100%;
     background-color: #1e90ff; /* Голубой фон меню */
     z-index: 1000; /* Убедимся, что меню поверх других элементов */
+    display: block;
 }
 
 .p-navigation__nav.is-visible {
@@ -136,9 +136,17 @@ pre {
 
 /* Адаптивность: показываем кнопки на мобильных устройствах */
 @media (max-width: 768px) {
+    .p-navigation__nav {
+        display: none; /* Скрываем меню на мобильных */
+    }
+    @media (min-width: 769px) {
     .p-navigation__toggle--open,
     .p-navigation__toggle--close {
-        display: inline-block; /* Показываем кнопки на мобильных устройствах */
+        display: none !important;
+    }
+}
+    .p-navigation__nav.is-visible {
+        display: block; /* Показываем при активации */
     }
 
     .p-navigation__items {
