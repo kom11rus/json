@@ -10,10 +10,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css">
 </head>
 <body>
-    <!-- Обновленное адаптивное меню -->
+    <!-- Главное меню -->
     <header class="p-navigation">
         <div class="p-navigation__row">
             <div class="p-navigation__banner">
@@ -21,13 +20,11 @@
                     <img src="img/logo.svg" alt="JSON Guide" width="100" class="logo">
                     <span class="p-navigation__site-name">JSON Guide</span>
                 </div>
-                <!-- Гамбургер-меню для мобильных -->
-                <a href="#navigation" class="p-navigation__toggle--open u-show--small" title="Открыть меню">☰</a>
-                <a href="#navigation-closed" class="p-navigation__toggle--close" title="Закрыть меню">×</a>
+                <a href="#navigation" class="p-navigation__toggle--open" title="Открыть меню">Меню</a>
+                <a href="#navigation-closed" class="p-navigation__toggle--close" title="Закрыть меню">Закрыть</a>
             </div>
-            <!-- Основное навигационное меню -->
-            <nav class="p-navigation__nav" id="navigation">
-                <ul class="p-navigation__items u-hide--small">
+            <nav class="p-navigation__nav">
+                <ul class="p-navigation__items">
                     <li class="p-navigation__item is-selected"><a href="index.html">Главная</a></li>
                     <li class="p-navigation__item"><a href="pages/python.html">Python</a></li>
                     <li class="p-navigation__item"><a href="pages/javascript.html">JavaScript</a></li>
@@ -44,7 +41,7 @@
     <div class="row">
         <main class="col-12">
             <div class="p-card">
-                <!-- Содержимое секций осталось без изменений -->
+                <!-- Раздел "Что такое JSON?" -->
                 <section id="what-is-json">
                     <h1 class="p-heading--2">JSON - современный формат обмена данными</h1>
                     <div class="p-media-object">
@@ -55,22 +52,52 @@
                     </div>
                 </section>
 
+                <!-- Раздел "Преимущества" -->
                 <section id="advantages" class="u-margin-top">
                     <h2 class="p-heading--3">Основные преимущества</h2>
                     <div class="p-table--mobile-card">
                         <table class="p-table">
-                            <!-- Содержимое таблицы -->
+                            <thead>
+                                <tr>
+                                    <th>Характеристика</th>
+                                    <th>Описание</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Читаемость</td>
+                                    <td>Простой для чтения и написания</td>
+                                </tr>
+                                <tr>
+                                    <td>Совместимость</td>
+                                    <td>Поддержка всеми языками</td>
+                                </tr>
+                                <tr>
+                                    <td>Производительность</td>
+                                    <td>Быстрая обработка</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                 </section>
 
+                <!-- Раздел "Структура JSON" -->
                 <section id="structure" class="u-margin-top">
                     <h2 class="p-heading--3">Базовая структура</h2>
                     <pre><code class="language-json">
-                        <!-- Пример JSON -->
+{
+    "имя": "Адам",
+    "возраст": 3879,
+    "адрес": {
+        "город": "Райский",
+        "улица": "Сад"
+    },
+    "теги": ["json", "data", "api"]
+}
                     </code></pre>
                 </section>
 
+                <!-- Раздел "Видео-обзор" -->
                 <section id="examples" class="u-margin-top">
                     <h2 class="p-heading--3">Видео-обзор</h2>
                     <div class="u-embedded-media">
@@ -93,7 +120,7 @@
                 <p>&copy; 2025 JSON Guide. Все права защищены.</p>
                 <ul class="p-inline-list">
                     <li class="p-inline-list__item"><a href="#">Политика конфиденциальности</a></li>
-                    <li class="p-inline-list__item"><a href="#contacts-modal" onclick="showContactsModal()">Контакты</a></li>
+                    <li class="p-inline-list__item"><a href="#contacts">Контакты</a></li>
                 </ul>
             </div>
             <div class="col-6 u-align--right">
@@ -104,8 +131,8 @@
         </div>
     </footer>
 
-    <!-- Модальное окно контактов -->
-    <div id="contacts-modal" class="p-modal" style="display: none;">
+    <!-- Модальное окно для контактов -->
+    <div id="contacts-modal" class="p-modal">
         <div class="p-modal__dialog">
             <header class="p-modal__header">
                 <h2 class="p-modal__title">Контакты</h2>
@@ -118,107 +145,7 @@
         </div>
     </div>
 
-    <!-- Стили для адаптивного меню -->
-    <style>
-        .p-navigation__items {
-            display: flex;
-            flex-wrap: wrap;
-            margin: 0;
-            padding: 0;
-        }
-
-        .p-navigation__item {
-            list-style: none;
-            margin: 0 1rem;
-        }
-
-        .p-navigation__item a {
-            color: #333;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .p-navigation__item a:hover {
-            background: #f5f5f5;
-            border-radius: 4px;
-        }
-
-        @media (max-width: 768px) {
-            .p-navigation__items {
-                flex-direction: column;
-                width: 100%;
-                padding: 1rem 0;
-            }
-
-            .p-navigation__item {
-                margin: 0.5rem 0;
-            }
-
-            .p-navigation__nav {
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease-out;
-            }
-
-            .p-navigation__nav.is-active {
-                max-height: 500px;
-            }
-
-            .p-navigation__toggle--open {
-                font-size: 1.5rem;
-                padding: 0.5rem;
-            }
-        }
-    </style>
-
-    <!-- Скрипты -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+    <!-- Подключение локального JavaScript-файла -->
     <script src="js/main.js"></script>
-    <script>
-        // Скрипт для адаптивного меню
-        document.addEventListener('DOMContentLoaded', function() {
-            const nav = document.querySelector('.p-navigation__nav');
-            const toggleOpen = document.querySelector('.p-navigation__toggle--open');
-            const toggleClose = document.querySelector('.p-navigation__toggle--close');
-
-            // Управление меню
-            toggleOpen.addEventListener('click', function(e) {
-                e.preventDefault();
-                nav.classList.add('is-active');
-            });
-
-            toggleClose.addEventListener('click', function(e) {
-                e.preventDefault();
-                nav.classList.remove('is-active');
-            });
-
-            // Закрытие при клике вне меню
-            document.addEventListener('click', function(e) {
-                if (!nav.contains(e.target) && 
-                    !toggleOpen.contains(e.target) &&
-                    nav.classList.contains('is-active')) {
-                    nav.classList.remove('is-active');
-                }
-            });
-
-            // Функции для модального окна
-            window.showContactsModal = function() {
-                document.getElementById('contacts-modal').style.display = 'block';
-            }
-
-            window.closeContactsModal = function() {
-                document.getElementById('contacts-modal').style.display = 'none';
-            }
-
-            // Закрытие модалки при клике вне окна
-            window.onclick = function(event) {
-                const modal = document.getElementById('contacts-modal');
-                if (event.target === modal) {
-                    modal.style.display = 'none';
-                }
-            }
-        });
-    </script>
 </body>
 </html>
